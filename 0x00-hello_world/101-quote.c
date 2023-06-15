@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <sys/syscall.h>
 /**
  * main - Entry point
  *
@@ -7,11 +6,6 @@
  */
 int main(void)
 {
-	const char msg1[] = "and that piece of art is useful\"";
-	const char msg2[] = " - Dora Korpar, 2015-10-19";
-
-	syscall(SYS_write, 1, msg1, sizeof(msg1));
-	syscall(SYS_write, 1, msg2, sizeof(msg2));
-	syscall(SYS_write, 1, "\n", sizeof("\n"));
+	write(2, "and that piece of art is useful - Dora Korpar, 2015-10-19\n", 58);
 	return (1);
 }
