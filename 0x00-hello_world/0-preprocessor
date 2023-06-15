@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -save-temps -c -v -o main.o "$CFILE" && cp main.i c
+gcc -E $CFILE -o c # 0. Preprocessor
