@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE # 2. Assembler
+gcc -S -masm=intel $CFILE # 7. Intel
