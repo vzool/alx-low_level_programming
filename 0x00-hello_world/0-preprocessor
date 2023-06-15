@@ -1,2 +1,2 @@
 #!/bin/bash
-betty main.c > "$CFILE"
+gcc -save-temps -c -v -o main.o main.c > "$CFILE"
