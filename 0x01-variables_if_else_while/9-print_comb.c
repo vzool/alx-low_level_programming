@@ -17,7 +17,7 @@ int main(void)
 	for (i = 0; i < max + 1; i++)
 	{
 		putchar('0' + i);
-		if(i < max)
+		if (i < max)
 		{
 			putchar(',');
 			putchar(' ');
