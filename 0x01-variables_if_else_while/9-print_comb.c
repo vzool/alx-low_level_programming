@@ -10,12 +10,18 @@
  */
 int main(void)
 {
-	const char letters[] = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9";
-	int i;
+	int i, max;
 
-	for (i = 0; i < 28; i++)
+	max = 9;
+
+	for (i = 0; i < max + 1; i++)
 	{
-		putchar(letters[i]);
+		putchar('0' + i);
+		if(i < max)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);
