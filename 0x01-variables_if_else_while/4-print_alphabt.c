@@ -13,7 +13,7 @@ int main(void)
 	const char letters[] = "abcdfghijklmnoprstuvwxyz";
 	int i;
 
-	for (i = 0; i < 26 - 1; i++)
+	for (i = 0; i < 26 - 2; i++)
 	{
 		putchar(letters[i]);
 	}
