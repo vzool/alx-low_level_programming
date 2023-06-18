@@ -20,6 +20,8 @@ int main(void)
 			{
 				for (l = 0; l <= max; l++)
 				{
+					if (i == k && j == l && i == 0 && j == 0 && k == 0 && l == 0)
+						continue;
 
 					putchar('0' + i);
 					putchar('0' + j);
