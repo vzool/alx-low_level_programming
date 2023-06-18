@@ -23,6 +23,9 @@ int main(void)
 					if (i == k && j == l && i == 0 && j == 0 && k == 0 && l == 0)
 						continue;
 
+					if (i == k && j == l)
+						continue;
+
 					putchar('0' + i);
 					putchar('0' + j);
 					putchar(' ');
