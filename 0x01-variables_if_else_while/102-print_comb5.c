@@ -16,14 +16,11 @@ int main(void)
 	{
 		for (j = 0; j <= max; j++)
 		{
-			for (k = 0; k <= max; k++)
+			for (k = i; k <= max; k++)
 			{
-				for (l = 0; l <= max; l++)
+				for (l = j; l <= max; l++)
 				{
-					if (i == k && j == l && i == 0 && j == 0 && k == 0 && l == 0)
-						continue;
-
-					if (i == k && j == l)
+					if (i == 0 && j == 0 && k == 0 && l == 0)
 						continue;
 
 					putchar('0' + i);
