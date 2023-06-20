@@ -7,11 +7,20 @@
  */
 int main(void)
 {
-	int i;
+	unsigned long i, x = 0, y = 1;
+	unsigned long next = x + y, limit = 53;
 
-	for (i = 1; i < 51; i++)
+	for (i = 3; i < limit; i++)
 	{
-		printf("%d\n", i * (i-1));
+		printf("%lu", next);
+		if (i < limit - 1)
+			printf(", ");
+		else
+			printf("\n");
+		x = y;
+		y = next;
+		next = x + y;
 	}
 	return (0);
 }
+
