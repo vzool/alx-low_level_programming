@@ -1,6 +1,15 @@
 #include <stdio.h>
 
-void _putstring(char *s);
+/**
+ * _putchar - print a character
+ * @c: character to print
+ *
+ * Return: int
+ */
+int _putchar(char c)
+{
+	return (putchar(c));
+}
 
 /**
  * main - Entry point
@@ -9,22 +18,14 @@ void _putstring(char *s);
  */
 int main(void)
 {
-	_putstring("_putchar");
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
-
-/**
- * _putchar - print a string
- * @c: string to print
- *
- * Return: void
- */
-void _putstring(char *s)
-{
-	unsigned long i;
-
-	for (i = 0; i < sizeof(s); i++)
-		putchar(s[i]);
-	putchar('\n');
-}
-
