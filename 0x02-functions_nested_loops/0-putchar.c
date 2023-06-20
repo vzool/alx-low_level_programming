@@ -14,8 +14,8 @@ int main(void)
 }
 
 /**
- * _putchar - print a string
- * @c: string to print
+ * _putstring - print a string
+ * @s: string to print
  *
  * Return: void
  */
