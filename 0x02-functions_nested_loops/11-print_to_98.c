@@ -2,7 +2,25 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - prints all natural numbers from n to 98, followed by a new line.
+ * print_number - prints number
+ *
+ * @i: int
+ *
+ * Return: void
+ */
+void print_number(int i)
+{
+	char num[3];
+	int j;
+
+	sprintf(num, "%d", i);
+	for (j = 0; j < 3; j++)
+		_putchar(num[j]);
+}
+
+/**
+ * print_to_98 - prints all natural numbers from n to 98,
+ * followed by a new line.
  *
  * @n: int
  *
@@ -10,9 +28,8 @@
  */
 void print_to_98(int n)
 {
-	int x = 98, i = 0, j;
-	char num[3];
-	int bigger = 0;
+	int x = 98, i = 0;
+	int reverse = 0;
 
 	if (n == 0)
 		n = x;
@@ -20,7 +37,7 @@ void print_to_98(int n)
 		i = x;
 	else if (n > x)
 	{
-		bigger = 1;
+		reverse = 1;
 		i = n;
 	}
 	else if (n < x)
@@ -29,34 +46,25 @@ void print_to_98(int n)
 		n = x;
 	}
 
-	if (bigger == 1)
-	{
+	if (reverse == 1)
 		for (; i >= x; i--)
-        	{
-                	sprintf(num, "%d", i);
-                	for(j = 0; j < 3; j++)
-                        _putchar(num[j]);
-                	if (i != x)
-              		{
-                        	_putchar(',');
-                        	_putchar(' ');
-                	}
-        	}
-	}
+		{
+			print_number(i);
+			if (i != x)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
 	else
-	{
 		for (; i <= n; i++)
-        	{
-                	sprintf(num, "%d", i);
-                	for(j = 0; j < 3; j++)
-                        	_putchar(num[j]);
-                	if (i != x)
-                	{
-                        	_putchar(',');
-                        	_putchar(' ');
-                	}
-        	}
-	}
+		{
+			print_number(i);
+			if (i != x)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
 	_putchar('\n');
 }
-
