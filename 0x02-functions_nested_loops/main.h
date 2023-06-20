@@ -4,18 +4,14 @@
 #include <stdio.h>
 
 /**
- * _putchar - print a string
- * @c: string to print
+ * _putchar - print a character
+ * @c: character to print
  *
- * Return: void
+ * Return: int
  */
-void _putchar(char *c)
+int _putchar(char c)
 {
-	unsigned long i;
-
-	for (i = 0; i < sizeof(c); i++)
-		putchar(c[i]);
-	putchar('\n');
+	return putchar(c);
 }
 
 #endif
