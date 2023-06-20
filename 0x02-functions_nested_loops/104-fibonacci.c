@@ -8,7 +8,7 @@
 int main(void)
 {
 	unsigned long i, x = 0, y = 1;
-	unsigned long next = x + y, limit = 53;
+	unsigned long next = x + y, limit = 100;
 
 	for (i = 3; i < limit; i++)
 	{
