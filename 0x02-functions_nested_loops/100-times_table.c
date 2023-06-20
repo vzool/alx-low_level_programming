@@ -15,7 +15,11 @@ void print_number(char *num, int size)
 	for (c = 0; c < size; c++)
 	{
 		if (num[c] >= '0' && num[c] <= '9')
+		{
 			_putchar(num[c]);
+			if (num[c] == '0')
+				break;
+		}
 		else
 			_putchar(' ');
 	}
