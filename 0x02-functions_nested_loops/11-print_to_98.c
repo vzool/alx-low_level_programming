@@ -10,11 +10,11 @@
  */
 void print_number(int i)
 {
-	char num[3];
+	char num[9];
 	int j;
 
 	sprintf(num, "%d", i);
-	for (j = 0; j < 3; j++)
+	for (j = 0; j < 9; j++)
 	{
 		if (num[j] == '\0')
 			break;
