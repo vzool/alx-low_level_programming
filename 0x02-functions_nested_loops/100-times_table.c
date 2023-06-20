@@ -12,7 +12,7 @@ void print_number(char *num)
 {
 	int c;
 
-	for (c = 0; c < 3; c++)
+	for (c = 0; c < 4; c++)
 	{
 		if (num[c] >= '0' && num[c] <= '9')
 		{
@@ -36,7 +36,7 @@ void print_number(char *num)
 void print_times_table(int n)
 {
 	int i, j, x;
-	char tmp[3], num[9];
+	char tmp[4], num[9];
 
 	if (n < 0 || n > 15)
 		return;
@@ -51,7 +51,7 @@ void print_times_table(int n)
 			else
 			{
 				sprintf(tmp, "%d", x);
-				sprintf(num, "%3s", tmp);
+				sprintf(num, "%4s", tmp);
 			}
 			if (i == j && j == 0)
 				_putchar('0');
