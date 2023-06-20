@@ -1,5 +1,7 @@
 #include "main.h"
 
+void _pchar(char c);
+
 /**
  * main - Entry point
  *
