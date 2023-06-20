@@ -1,6 +1,6 @@
-#include "main.h"
+#include <stdio.h>
 
-void _pchar(char c);
+void _putstring(char *s);
 
 /**
  * main - Entry point
@@ -9,14 +9,21 @@ void _pchar(char c);
  */
 int main(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
+	_putstring("_putchar");
 	return (0);
+}
+
+/**
+ * _putchar - print a string
+ * @c: string to print
+ *
+ * Return: void
+ */
+void _putstring(char *s)
+{
+	unsigned long i;
+
+	for (i = 0; i < sizeof(s); i++)
+		putchar(s[i]);
+	putchar('\n');
 }
