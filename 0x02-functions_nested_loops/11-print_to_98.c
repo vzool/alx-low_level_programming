@@ -14,7 +14,7 @@ void print_number(int i)
 	int j;
 
 	sprintf(num, "%d", i);
-	for (j = 0; j < 3; j++)
+	for (j = 0; j < 2; j++)
 		_putchar(num[j]);
 }
 
