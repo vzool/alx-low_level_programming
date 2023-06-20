@@ -14,8 +14,12 @@ void print_number(int i)
 	int j;
 
 	sprintf(num, "%d", i);
-	for (j = 0; j < 2; j++)
+	for (j = 0; j < 3; j++)
+	{
+		if (num[j] == '\0')
+			break;
 		_putchar(num[j]);
+	}
 }
 
 /**
