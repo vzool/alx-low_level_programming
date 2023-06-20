@@ -8,26 +8,21 @@
  *
  * Return: void
  */
-void print_number(char *num)
+void print_number(char *num, int size)
 {
 	int c;
 
-	for (c = 0; c < 4; c++)
+	for (c = 0; c < size; c++)
 	{
 		if (num[c] >= '0' && num[c] <= '9')
-		{
 			_putchar(num[c]);
-
-			if (num[c] == '0')
-				break;
-		}
 		else
 			_putchar(' ');
 	}
 }
 
 /**
- * print_times_table - prints the 9 times table, starting with 0
+ * print_times_table - prints the n times table, starting with 0
  *
  * @n: int
  *
@@ -56,7 +51,7 @@ void print_times_table(int n)
 			if (i == j && j == 0)
 				_putchar('0');
 			else
-				print_number(num);
+				print_number(num, 4);
 			if (j < n)
 				_putchar(',');
 		}
