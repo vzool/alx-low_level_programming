@@ -18,11 +18,15 @@ void print_to_98(int n)
 		n = x;
 	else if (n == x)
 		i = x;
-	else if(n > x)
+	else if (n > x)
 	{
 		bigger = 1;
 		i = n;
-
+	}
+	else if (n < x)
+	{
+		i = n;
+		n = x;
 	}
 
 	if (bigger == 1)
