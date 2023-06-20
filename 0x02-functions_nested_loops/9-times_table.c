@@ -24,9 +24,7 @@ void times_table(void)
 				sprintf(num, "%3s", tmp);
 			}
 			if (i == j && j == 0)
-			{
 				_putchar('0');
-			}
 			else
 			{
 				for (c = 0; c < 3; c++)
@@ -39,9 +37,7 @@ void times_table(void)
 							break;
 					}
 					else
-					{
 						_putchar(' ');
-					}
 				}
 			}
 			if (j < 9)
