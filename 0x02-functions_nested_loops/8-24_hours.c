@@ -17,7 +17,7 @@ void jack_bauer(void)
 		{
 			if (i < 10)
 			{
-                                _putchar('0');
+				_putchar('0');
 				_putchar('0' + i);
 			}
 			else
@@ -29,15 +29,15 @@ void jack_bauer(void)
 			_putchar(':');
 			if (j < 10)
 			{
-                                _putchar('0');
+				_putchar('0');
 				_putchar('0' + j);
 			}
 			else
-                        {
-                                sprintf(num, "%d", j);
-                                for (c = 0; c < 2; c++)
-                                        _putchar(num[c]);
-                        }
+			{
+				sprintf(num, "%d", j);
+				for (c = 0; c < 2; c++)
+					_putchar(num[c]);
+			}
 			_putchar('\n');
 		}
 }
