@@ -12,22 +12,46 @@ void print_to_98(int n)
 {
 	int x = 98, i = 0, j;
 	char num[3];
+	int bigger = 0;
 
 	if (n == 0)
 		n = x;
 	else if (n == x)
 		i = x;
-
-	for (; i <= n; i++)
+	else if(n > x)
 	{
-		sprintf(num, "%d", i);
-		for(j = 0; j < 3; j++)
-			_putchar(num[j]);
-		if (i != x)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
+		bigger = 1;
+		i = n;
+
+	}
+
+	if (bigger == 1)
+	{
+		for (; i >= x; i--)
+        	{
+                	sprintf(num, "%d", i);
+                	for(j = 0; j < 3; j++)
+                        _putchar(num[j]);
+                	if (i != x)
+              		{
+                        	_putchar(',');
+                        	_putchar(' ');
+                	}
+        	}
+	}
+	else
+	{
+		for (; i <= n; i++)
+        	{
+                	sprintf(num, "%d", i);
+                	for(j = 0; j < 3; j++)
+                        	_putchar(num[j]);
+                	if (i != x)
+                	{
+                        	_putchar(',');
+                        	_putchar(' ');
+                	}
+        	}
 	}
 	_putchar('\n');
 }
