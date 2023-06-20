@@ -22,18 +22,25 @@ void times_table(void)
 				sprintf(tmp, "%d", x);
 				sprintf(num, "%3s", tmp);
 			}
-			for (c = 0; c < 3; c++)
+			if (i == j && j == 0)
 			{
-				if (num[c] >= '0' && num[c] <= '9')
+				_putchar('0');
+			}
+			else
+			{
+				for (c = 0; c < 3; c++)
 				{
-					_putchar(num[c]);
+					if (num[c] >= '0' && num[c] <= '9')
+					{
+						_putchar(num[c]);
 
-					if (num[c] == '0')
-						break;
-				}
-				else
-				{
-					_putchar(' ');
+						if (num[c] == '0')
+							break;
+					}
+					else
+					{
+						_putchar(' ');
+					}
 				}
 			}
 			if (j < 9)
