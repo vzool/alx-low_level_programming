@@ -14,21 +14,17 @@ void print_triangle(int n)
 	if (n <= 0)
 	{
 		_putchar('\n');
-		_putchar('\n');
 		return;
 	}
 
-	for (i = 0; i <= n; i++)
+	for (i = 0; i < n; i++)
 	{
 		for (j = 0; j < n; j++)
 		{
-			if (j >= n - i)
-				_putchar('#');
+			if (j < n - i - 1)
+				_putchar(' ');
 			else
-			{
-				if (j < n - 1)
-					_putchar(' ');
-			}
+				_putchar('#');
 		}
 		if (i != n)
 			_putchar('\n');
