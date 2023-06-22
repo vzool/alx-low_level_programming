@@ -24,7 +24,10 @@ void print_triangle(int n)
 			if (j >= n - i)
 				_putchar('#');
 			else
-				_putchar(' ');
+			{
+				if (j < n - 1)
+					_putchar(' ');
+			}
 		}
 		if (i != n)
 			_putchar('\n');
