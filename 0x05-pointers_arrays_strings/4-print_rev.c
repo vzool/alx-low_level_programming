@@ -19,7 +19,11 @@ void print_rev(char *str)
 		i = 0;
 
 	for (; i >= 0; i--)
+	{
+		if (str[i] == '\0')
+				continue;
 		_putchar(str[i]);
+	}
 
 	_putchar('\n');
 }
