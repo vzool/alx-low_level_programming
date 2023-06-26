@@ -13,7 +13,7 @@ void rev_string(char *str)
 	char tmp;
 	int size = sizeof(str);
 
-	for (i = 0; i < size / 2; i++)
+	for (i = 0; i <= size / 2; i++)
 	{
 		tmp = str[i];
 		str[i] = str[size - i];
