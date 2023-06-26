@@ -9,20 +9,14 @@
  */
 void rev_string(char *str)
 {
-	int i;
+	int i, tmp;
 	int size = sizeof(str);
-	char tmp;
 
-	for (i = 0;; i++)
-		if (str[i] == '\0')
-			break;
-
-	for (; i >= 0; i--)
-		if (str[i] != '\0')
-		{
-			tmp = str[size - i];
-			str[size - i] = str[i];
-			str[i] = tmp;
-		}
+	for (i = 0; i < size / 2; i++)
+	{
+		tmp = str[i];
+		str[i] = str[size - i];
+		str[size - i] = tmp;
+	}
 }
 
