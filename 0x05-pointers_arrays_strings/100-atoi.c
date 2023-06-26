@@ -10,7 +10,7 @@
  */
 int _atoi(char *s)
 {
-	int i = 0, size = 0, x = 0, negative = 0;
+	int i = 0, j, size = 0, x = 0, negative = 0;
 
 	while (s[i] != '\0')
 	{
@@ -30,9 +30,11 @@ int _atoi(char *s)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			printf("%c\n", s[i]);
+			printf("%c - %d - %d\n", s[i], i, size - i);
+			x += (s[i] - 30);
+			for (j = 0; j < size - i; j++)
+				x *= 10;
 		}
-		i++;
 	}
 
 	if (negative == 1)
