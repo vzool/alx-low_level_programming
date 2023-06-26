@@ -15,7 +15,11 @@ void puts_half(char *str)
 		if (str[i] == '\0')
 			break;
 	for (j = i / 2; j < i; j++)
+	{
+		if (str[j] == '\0')
+			break;
 		_putchar(str[j]);
+	}
 	_putchar('\n');
 }
 
