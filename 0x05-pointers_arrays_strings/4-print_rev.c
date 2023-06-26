@@ -15,15 +15,9 @@ void print_rev(char *str)
 		if (str[i] == '\0')
 			break;
 
-	if (str[0] == '\0')
-		i = 0;
-
 	for (; i >= 0; i--)
-	{
-		if (str[i] == '\0')
-				continue;
-		_putchar(str[i]);
-	}
+		if (str[i] != '\0')
+			_putchar(str[i]);
 
 	_putchar('\n');
 }
