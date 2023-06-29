@@ -10,7 +10,7 @@
 char *cap_string(char *s)
 {
 	int i = 0, j, hit;
-	char *match = " -.\n";
+	char *match = " -.\n;!(){}!?\"\t";
 
 	for (; s[i] != '\0'; i++)
 	{
