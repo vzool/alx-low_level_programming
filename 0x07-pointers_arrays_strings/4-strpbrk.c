@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strpbrk - searches a string for any of a set of bytes.
+ * _strpbrk - searches a string for any of a set of bytes and return only the first match.
  *
  * @s: pointer to the string.
  * @accept: pointer to the string of bytes to be compared.
@@ -12,16 +12,28 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+	int i, j, found;
 
-	for (i = 0; s[i] != '\0'; s++)
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		for (j = 0; accept[j] != s[i]; j++)
+		j = 0;
+		found = 0;
+		while (*(accept + j) != '\0')
 		{
-			if (accept[j] == '\0')
-				return (s);
+			if (*(s + i) == *(accept + j))
+			{
+				found = 1;
+				break;
+			}
+			j++;
 		}
+		if (found == 1)
+			break;
+		i++;
 	}
-
-	return (NULL);
+	if (found == 1)
+		return (s + i);
+	else
+		return (NULL);
 }
