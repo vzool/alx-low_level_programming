@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * _strpbrk - searches a string for any of a set of bytes and return only the first match.
+ * _strpbrk - searches a string for any of a set of
+ * bytes and return only the first match.
  *
  * @s: pointer to the string.
  * @accept: pointer to the string of bytes to be compared.
