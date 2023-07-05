@@ -3,7 +3,7 @@
 
 /**
  * _sqrt - find square root
- * 
+ *
  * @n: base value
  * @i: incrementer
  *
@@ -20,7 +20,7 @@ int _sqrt(int n, int i)
 
 /**
  * _sqrt_recursion - square root of a number
- * 
+ *
  * @n: base value
  *
  * Return: int

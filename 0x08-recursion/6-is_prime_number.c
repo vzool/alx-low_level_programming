@@ -3,7 +3,7 @@
 
 /**
  * _prime - check if number a prime number
- * 
+ *
  * @n: base value
  * @i: iterator
  *
@@ -20,7 +20,7 @@ int _prime(int n, int i)
 
 /**
  * is_prime_number - check if number a prime number
- * 
+ *
  * @n: base value
  *
  * Return: int

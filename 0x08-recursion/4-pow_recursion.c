@@ -3,7 +3,7 @@
 
 /**
  * _pow_recursion - value of x raised to the power of y
- * 
+ *
  * @x: base value
  * @y: power value
  *
