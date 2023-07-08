@@ -26,7 +26,7 @@ int check_digit(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, sum = 0, tmp;
 
 	if (argc < 3)
 	{
@@ -36,6 +36,12 @@ int main(int argc, char *argv[])
 	for (i = 1; i < argc; i++)
 	{
 		if (!check_digit(argv[i]))
+		{
+			printf("Error\n");
+			return (1);
+		}
+		tmp = atoi(argv[i]);
+		if (tmp == 0)
 		{
 			printf("Error\n");
 			return (1);
