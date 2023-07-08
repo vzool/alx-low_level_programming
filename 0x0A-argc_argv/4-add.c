@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * check_digit - checks if a string is a digit
@@ -18,25 +19,6 @@ int check_digit(char *s)
 }
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to convert
- * Return: integer
- */
-int _atoi(char *s)
-{
-	int i, sign = 1, num = 0;
-
-	for (i = 0; s[i]; i++)
-	{
-		if (s[i] == '-')
-			sign *= -1;
-		if (s[i] >= '0' && s[i] <= '9')
-			num = num * 10 + (s[i] - '0');
-	}
-	return (num * sign);
-}
-
-/**
  * main - adds positive numbers
  * @argc: number of arguments
  * @argv: array of arguments
@@ -44,7 +26,7 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, tmp;
+	int i, sum = 0;
 
 	if (argc < 3)
 	{
@@ -58,13 +40,7 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
-		tmp = _atoi(argv[i]);
-		if (tmp == 0)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		sum += tmp;
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
