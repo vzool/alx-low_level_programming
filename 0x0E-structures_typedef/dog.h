@@ -1,5 +1,13 @@
 #ifndef HEADER_DOG
 #define HEADER_DOG
+/**
+ * struct dog - dog structure
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ *
+ * Description: dog structure
+ */
 typedef struct dog
 {
 	char *name;
