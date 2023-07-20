@@ -5,7 +5,7 @@
 /**
  * print_numbers - prints numbers, followed by a new line
  * with using putchar only
- * 
+ *
  * @separator: string to be printed between numbers
  * @n: number of integers passed to the function
  *
