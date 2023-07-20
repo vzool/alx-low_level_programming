@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - performs simple operations
@@ -8,11 +9,13 @@
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: 0
+ * Return: 98 if number of arguments is wrong,
+ * 99 if the operator is incorrect,
+ * 100 if the user tries to divide (/ or %) by 0.
  */
 int main(int argc, char **argv)
 {
-	int a, b, result;
+	int a, b;
 	int (*f)(int, int);
 
 	if (argc != 4)
@@ -38,9 +41,7 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 
-	result = f(a, b);
-
-	printf("%d\n", result);
+	printf("%d\n", f(a, b));
 
 	return (0);
 }

@@ -13,21 +13,23 @@
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
+		{"+", op_add}, /* 0 */
+		{"-", op_sub}, /* 1 */
+		{"*", op_mul}, /* 2 */
+		{"/", op_div}, /* 3 */
+		{"%", op_mod}, /* 4 */
 		{0, 0}
 	};
 	int i;
 
 	i = 0;
+
 	while (i < 5)
 	{
-		if (*s == *(ops[i].op))
+		if (*s == *ops[i].op && *(s + 1) == '\0')
 			return (ops[i].f);
 		i++;
 	}
+
 	return (0);
 }
