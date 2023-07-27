@@ -22,5 +22,9 @@ void free_list(list_t *head)
 			free(tmp->str);
 		free(tmp);
 	} while (head->next != NULL);
+	if (head->next != NULL)
+		free(head->next);
+	if (head->str != NULL)
+			free(head->str);
 	free(head);
 }
