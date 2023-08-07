@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
+
 #define BUFF_SIZE 1024
 
 /**
@@ -16,7 +15,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, read_state, write_state;
+	int file_from, file_to, read_state = 1, write_state;
 	mode_t permissions = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	char ch[BUFF_SIZE];
 
@@ -28,7 +27,6 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, permissions);
 	if (file_to == -1)
 		dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
-	read_state = 1;
 	while (read_state)
 	{
 		read_state = read(file_from, ch, BUFF_SIZE);
