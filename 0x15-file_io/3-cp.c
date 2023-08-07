@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		if (read_state > 0)
 		{
 			write_state = write(file_to, ch, read_state);
-			if (write_state == -1)
+			if (write_state == -1 || write_state != read_state)
 				dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
 	}
