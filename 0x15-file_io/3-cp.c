@@ -11,12 +11,11 @@
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: 0 on success, 1 on failure
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, read_state = 1, write_state;
-	mode_t permissions = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	char ch[BUFF_SIZE];
 
 	if (argc != 3)
@@ -24,7 +23,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, permissions);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 		dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 	while (read_state)
