@@ -16,7 +16,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file, read_state = 1, write_state;
+	int file, read_state, write_state;
 	size_t count = 0;
 	char c;
 
@@ -27,7 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file == -1)
 		return (0);
 
-	while (count <= letters && read_state != 0)
+	while (count <= letters)
 	{
 		read_state = read(file, &c, 1);
 		if (read_state == -1)
