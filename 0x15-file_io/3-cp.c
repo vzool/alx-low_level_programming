@@ -17,6 +17,7 @@
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, read_state, write_state;
+	mode_t permissions = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 	char ch[BUFF_SIZE];
 
 	if (argc != 3)
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	file_to = open(argv[1], O_CREAT | O_WRONLY | O_TRUNC);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, permissions);
 	if (file_to == -1)
 		dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
 	read_state = 1;
