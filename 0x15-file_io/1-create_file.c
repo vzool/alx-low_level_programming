@@ -24,6 +24,10 @@ int create_file(const char *filename, char *text_content)
 
 	if (chmod(filename, 0600) == -1)
 		return (-1);
+	
+	if (truncate(filename, 0) == -1)
+		return (-1);
+
 	fputs(text_content, file);
 	fclose(file);
 	return (1);
