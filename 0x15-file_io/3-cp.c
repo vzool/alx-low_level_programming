@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	FILE *fp1, *fp2;
+	FILE *file_from, *file_to;
 	char ch[1024];
 
 	if (argc != 3)
@@ -23,15 +23,8 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	fp1 = fopen(argv[1], "r");
-	if (fp1 == NULL)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	fp2 = fopen(argv[2], "w");
-	if (fp2 == NULL)
+	file_to = fopen(argv[2], "w");
+	if (file_to == NULL)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
@@ -39,8 +32,7 @@ int main(int argc, char *argv[])
 
 	if (access(argv[2], F_OK) == 0)
 	{
-		if (truncate(argv[2], 0) == -1)
-			return (-1);
+		truncate(argv[2], 0);
 	}
 	else
 	{
@@ -48,21 +40,28 @@ int main(int argc, char *argv[])
 			return (-1);
 	}
 
-	while (fgets(ch, 1024, fp1) != NULL)
+	file_from = fopen(argv[1], "r");
+	if (file_from == NULL)
 	{
-		if (fputs(ch, fp2) == EOF)
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	while (fgets(ch, 1024, file_from) != NULL)
+	{
+		if (fputs(ch, file_to) == EOF)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
-			exit(EXIT_FAILURE);
+			exit(99);
 		}
 	}
 
-	if (fclose(fp1) == EOF)
+	if (fclose(file_from) == EOF)
 	{
 		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
 	}
-	if (fclose(fp2) == EOF)
+	if (fclose(file_to) == EOF)
 	{
 		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
