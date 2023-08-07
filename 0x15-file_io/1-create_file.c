@@ -31,8 +31,11 @@ int create_file(const char *filename, char *text_content)
 			return (-1);
 	}
 
-	if (fputs(text_content, file) == EOF)
-		return (-1);
+	if (text_content != NULL)
+	{
+		if (fputs(text_content, file) == EOF)
+			return (-1);
+	}
 	fclose(file);
 	return (1);
 }
