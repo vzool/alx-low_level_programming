@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	{
 		read_state = read(file_from, ch, BUFF_SIZE);
 		if (read_state == -1)
-			dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(99);
 		if (read_state > 0)
 		{
 			write_state = write(file_to, ch, read_state);
